@@ -4,6 +4,8 @@ var path = require('path');
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost:27017/test3');
 const Todo = require("./modele/todo_modele");
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 //var urlencodedParser = bodyParser.urlencoded({ extended: false });
 // test 
 
@@ -117,5 +119,10 @@ app.post('/liste/', function(req, res){
     return res.send("OK");
 });
 
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+  socket.emit('message' , 'bien connecté');
+});
 
 app.listen(3000)
