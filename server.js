@@ -111,7 +111,7 @@ app.delete('/liste/:id', function (req, res) {
 
 app.post('/liste/', function(req, res){
 
-        //var kitty = new Todo(myobj);
+        var kitty = new Todo(req.body);
         kitty.save().then(function(req, res) {
     });
     return res.send("OK");
