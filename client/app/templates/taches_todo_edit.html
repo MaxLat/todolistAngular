@@ -4,12 +4,12 @@
 
 	<button ui-sref="taches_liste" >< retour</button >
 
-	<h4>{{profil.Nom}} - {{profil.Description}}</h4>
+	<h4>{{todo.Nom}} - {{todo.Description}}</h4>
 <table class="liste">
-		<tr><td>Do: 			</td><td>	<input type="text"	ng-model="profil.Do"	></td></tr>
-		<tr><td>Nom:			</td><td>	<input type="text"	ng-model="profil.Nom"	></td></tr>
-		<tr><td>Description:	</td><td>	<input type="text"	ng-model="profil.Description"	></td></tr>
-		<tr><td>Date:  		</td><td><input type="text"	ng-model="profil.Date"				></td></tr>
+		<tr><td>Do: 			</td><td>	<input type="checkbox"	ng-model="todo.Etat"	></td></tr>
+		<tr><td>Nom:			</td><td>	<input type="text"	ng-model="todo.Nom"	></td></tr>
+		<tr><td>Description:	</td><td>	<input type="text"	ng-model="todo.Description"	></td></tr>
+		<tr><td>Date:  		</td><td><input type="text" ng-model="todo.Date"></td></tr>
 		</table>
-	<button ng-click="profil_edit_valide(profil)">Submit</button>
+	<button ng-click="todo_edit_valide(todo)">Submit</button>
 </div>

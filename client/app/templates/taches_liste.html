@@ -1,6 +1,6 @@
 	<hr>
 	<h3>Liste des taches : ({{listetaches.length}})
-		<span ui-sref="membres_profil_ajouter"   class="btn-commande add">Ajouter un todo</span >
+		<span ui-sref="taches_todo_ajouter"   class="btn-commande add">Ajouter un todo</span >
 	</h3>
 	<table  class="liste liste-container">
 		<!--<tr>
@@ -18,10 +18,11 @@
 			</th>
 		</tr>-->
 		<!--<tr  ng-repeat="el in listeMembres | orderBy:'Nom'" ng-if="el.Nom" class="ligne-profil"> -->
-		<tr  ng-repeat="el in listeMembres | orderBy:propertyName:reverse" ng-if="el.Nom" class="ligne-profil"> 
-			<td> <a ui-sref="membres_profil({id: el._id})" >{{el.Nom.ucfirst()}}</td><td>{{el.Description.ucfirst()}}</a></td>
+		<tr  ng-repeat="el in listetaches | orderBy:propertyName:reverse" ng-if="el.Nom" class="ligne-profil"> 
+			<td>{{el.Etat}}</td><td> <a ui-sref="taches_todo({id: el._id})" >{{el.Nom.ucfirst()}}</a></td><td><a ui-sref="taches_todo({id: el._id})" >{{el.Description.ucfirst()}}</a></td>
+			<td>{{el.Date}}</td>
 						<td class="commandes"style="position: sticky; left: 50%; vertical-align: middle;">
-							<span ui-sref="membres_profil_edit({'id' : el._id})"  class="btn-commande edit"></span>
+							<span ui-sref="taches_todo_edit({'id' : el._id})"  class="btn-commande edit"></span>
 							<span ng-click="delete(el)"   class="btn-commande delete"></span>
 						</td>
 		</tr>

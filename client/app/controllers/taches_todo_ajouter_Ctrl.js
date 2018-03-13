@@ -1,4 +1,4 @@
-angular.module('Description').controller("taches_todo_ajouter_Ctrl",['$scope','$stateParams','tachesFactory','$state', function($scope,$stateParams,tachesFactory,$state){
+angular.module('moduletodo').controller("taches_todo_ajouter_Ctrl",['$scope','$stateParams','tachesFactory','$state', function($scope,$stateParams,tachesFactory,$state){
 
 		$scope.listetaches = tachesFactory.query();
 

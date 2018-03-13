@@ -1,4 +1,4 @@
-angular.module('Description').controller("taches_liste_Ctrl",['$scope','$stateParams','tachesFactory','$state', 'orderByFilter', function($scope,$stateParams,tachesFactory,$state, orderBy){
+angular.module('moduletodo').controller("taches_liste_Ctrl",['$scope','$stateParams','tachesFactory','$state', 'orderByFilter', function($scope,$stateParams,tachesFactory,$state, orderBy){
 
 			tachesFactory.query().$promise.then(
 			                   	function(success){

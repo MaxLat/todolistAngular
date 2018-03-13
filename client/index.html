@@ -53,8 +53,8 @@
   content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
 }
 </style>
-		<script src="/socket.io/socket.io.js"></script>
-	<!--	<script src="/assets/lib/moment/moment.js"></script>
+	<!--		<script src="/socket.io/socket.io.js"></script>
+	<script src="/assets/lib/moment/moment.js"></script>
 		<script src="/assets/lib/lodash/lodash.js"></script>
 	-->
 	<script>
@@ -74,10 +74,10 @@ String.prototype.ucfirst = function()
 
 
 			<script>
-			  var socket = io();
-			  String.prototype.ucfirst = function(){
-					return this.charAt(0).toUpperCase() + this.substr(1).toLowerCase();
-				}
+			//var socket = io();
+			//String.prototype.ucfirst = function(){
+			//	return this.charAt(0).toUpperCase() + this.substr(1).toLowerCase();
+			//}
 		//	  socket.on('tweet', function(msg){
 		//		console.log('message: ' + msg);
 		//		var div=document.createElement('div');
@@ -90,11 +90,11 @@ String.prototype.ucfirst = function()
 		</head>
 <body>
 
-<div ng-app="Description">
+<div ng-app="moduletodo">
   
    <a ui-sref="hello" ui-sref-active="active">Hello</a>
    <a ui-sref="about" ui-sref-active="active">About</a>
-   <a ui-sref="membres_liste" ui-sref-active="active">listeTodo</a>
+   <a ui-sref="taches_liste" ui-sref-active="active">listeTodo</a>
    
   <ui-view></ui-view>
   
@@ -104,7 +104,7 @@ String.prototype.ucfirst = function()
 	<script src="/assets/lib/angular-resource/angular-resource.js"></script>
 	<script src="/app/app.js"></script>
 		<script src="/app/config/config.js"></script>
-			<script type="text/javascript" src="/app/services/membres.service.js"></script>
+			<script type="text/javascript" src="/app/services/taches.service.js"></script>
 
 			<script type="text/javascript" src="/app/controllers/taches_liste_Ctrl.js"></script>		
 				<script type="text/javascript" src="/app/controllers/taches_todo_Ctrl.js"></script>		
