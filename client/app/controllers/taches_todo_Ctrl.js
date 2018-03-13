@@ -1,4 +1,4 @@
-angular.module('moduletest').controller("taches_todo_Ctrl",
+angular.module('Description').controller("taches_todo_Ctrl",
 [
 '$scope',
 '$stateParams',

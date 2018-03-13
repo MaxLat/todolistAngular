@@ -1,4 +1,4 @@
-angular.module('moduletest').controller("taches_liste_Ctrl",['$scope','$stateParams','tachesFactory','$state', 'orderByFilter', function($scope,$stateParams,tachesFactory,$state, orderBy){
+angular.module('Description').controller("taches_liste_Ctrl",['$scope','$stateParams','tachesFactory','$state', 'orderByFilter', function($scope,$stateParams,tachesFactory,$state, orderBy){
 
 			tachesFactory.query().$promise.then(
 			                   	function(success){
@@ -11,21 +11,6 @@ angular.module('moduletest').controller("taches_liste_Ctrl",['$scope','$statePar
 			                   );
 			
 			
-			//.$promise.then(
-			//	function(success){
-			//		$scope.count=0;
-			//		
-			//		for(var i in $scope.listetaches)
-			//		{
-			//			$scope.count++;
-			//		}
-			//	}
-			//	,
-			//	function(error){
-			//		console.log('erreur');
-			//	}
-			//);
-
 			$scope.propertyName = 'Nom';
 			  $scope.reverse = true;
 

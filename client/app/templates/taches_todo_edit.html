@@ -2,21 +2,14 @@
 
 	<hr>
 
-	<button ui-sref="membres_liste" >< retour</button >
+	<button ui-sref="taches_liste" >< retour</button >
 
-	<h4>{{profil.Nom}} - {{profil.Prenom}}</h4>
+	<h4>{{profil.Nom}} - {{profil.Description}}</h4>
 <table class="liste">
-		<tr><td>Id:			</td><td><input type="text"	ng-model="profil._id"				></td></tr>
-		<tr><td>Nom:		</td><td>	<input type="text"	ng-model="profil.Nom"	></td></tr>
-		<tr><td>Prenom:		</td><td><input type="text"	ng-model="profil.Prenom"	></td></tr>
-		<tr><td>Mail:  		</td><td><input type="text"	ng-model="profil.Mail"				></td></tr>
-		<tr><td>Javascript:	</td><td><input type="text"	ng-model="profil.Javascript"		></td></tr>
-		<tr><td>site_pref:  </td><td>	<input type="text"	ng-model="profil.site_pref"		></td></tr>
-		<tr><td>Pourquoi_S: </td><td> 	<input type="text"	ng-model="profil.Pourquoi_S"	></td></tr>
-		<tr><td>app_pref:  	</td><td><input type="text"	ng-model="profil.app_pref"			></td></tr>
-		<tr><td>Pourquoi_A: </td><td> 	<input type="text"	ng-model="profil.Pourquoi_A"	></td></tr>
-		<tr><td>before_IFA: </td><td> 	<input type="text"	ng-model="profil.before_IFA"	></td></tr>
-		<tr><td>pourquoi_IFA</td><td> <input type="text"	ng-model="profil.pourquoi_IFA"	></td></tr>
+		<tr><td>Do: 			</td><td>	<input type="text"	ng-model="profil.Do"	></td></tr>
+		<tr><td>Nom:			</td><td>	<input type="text"	ng-model="profil.Nom"	></td></tr>
+		<tr><td>Description:	</td><td>	<input type="text"	ng-model="profil.Description"	></td></tr>
+		<tr><td>Date:  		</td><td><input type="text"	ng-model="profil.Date"				></td></tr>
 		</table>
 	<button ng-click="profil_edit_valide(profil)">Submit</button>
 </div>

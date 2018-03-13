@@ -1,4 +1,4 @@
-angular.module('moduletest').controller("taches_todo_edit_Ctrl",['$scope','$stateParams','tachesFactory','$state', function($scope,$stateParams,tachesFactory,$state){
+angular.module('Description').controller("taches_todo_edit_Ctrl",['$scope','$stateParams','tachesFactory','$state', function($scope,$stateParams,tachesFactory,$state){
 
 		$scope.todo = tachesFactory.get({tskTodo : $stateParams.id}); 
 		$scope.todo_edit_valide = function(todo){

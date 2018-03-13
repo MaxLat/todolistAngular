@@ -1,5 +1,5 @@
 angular
-	.module('moduletest')
+	.module('Description')
 	.config(function($stateProvider,$urlRouterProvider) {
 	  $stateProvider.state({
 		name: 'hello',
