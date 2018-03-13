@@ -1,9 +1,9 @@
 var express = require('express')
 var bodyParser = require('body-parser')
 var path = require('path');
-var mongoose = require('mongoose');;
-mongoose.connect('mongodb://localhost:27017/test');
-const Eleve = require("./modele/eleve_modele.js");
+var mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost:27017/test3');
+const Todo = require("./modele/todo_modele");
 //var urlencodedParser = bodyParser.urlencoded({ extended: false });
 // test 
 
@@ -16,7 +16,11 @@ app.use('/app' , express.static('client/app'))
 
 app.get('/', function (req, res) {
 
-   res.sendFile(path.join(__dirname + '/client/client.html'));
+
+   /*var myobj = { Nom: "Company Inc", Description: "Highway 37" , Date : "12/04/2057"  , Etat : true};
+   var entre = new Todo(myobj);
+   entre.save();*/
+   res.sendFile(path.join(__dirname + '/index.html'));
 
 })
 
@@ -25,7 +29,7 @@ app.get('/liste', function (req, res) {
     console.log(__dirname);
     var test
 
-    Eleve.find({}, function(err , docs){
+    Todo.find({}, function(err , docs){
         //console.log(docs);
         //test = docs;
         if(err)
@@ -47,7 +51,7 @@ app.get('/liste', function (req, res) {
 app.get('/liste/:id', function (req, res) {
     console.log(__dirname);
 
-     Eleve.findOne({'_id' : req.params.id}, function(err , docs){
+     Todo.findOne({'_id' : req.params.id}, function(err , docs){
         //console.log(docs);
         //test = docs;
         if(err)
@@ -73,7 +77,7 @@ app.put('/liste/:id', function (req, res) {
 
   console.log(req.body);
 
-    Eleve.update({ "_id": req.params.id }, req.body, function (err, eleve) {
+    Todo.update({ "_id": req.params.id }, req.body, function (err, eleve) {
 
       if(err){
         res.send(err);
@@ -91,7 +95,7 @@ app.put('/liste/:id', function (req, res) {
 /* On supprime un utilisateur de la liste */
 app.delete('/liste/:id', function (req, res) {
 
-  Eleve.remove({ _id: req.params.id }, function(err, eleve) {
+  Todo.remove({ _id: req.params.id }, function(err, eleve) {
 
     if(err){
       res.send(err);
@@ -107,7 +111,7 @@ app.delete('/liste/:id', function (req, res) {
 
 app.post('/liste/', function(req, res){
 
-        var kitty = new Eleve(req.body);
+        var kitty = new Todo(myobj);
         kitty.save().then(function(req, res) {
     });
     return res.send("OK");
