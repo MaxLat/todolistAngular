@@ -3,23 +3,30 @@
 		<span ui-sref="taches_todo_ajouter"   class="btn-commande add">Ajouter un todo</span >
 	</h3>
 	<table  class="liste liste-container">
-		<!--<tr>
+		<tr>
+			<th>
+				<button ng-click="sortBy('Nom')">Statut</button>
+				<span class="sortorder" ng-show="propertyName === 'Etat'" ng-class="{reverse: reverse}"></span>
+			</th>
 			<th>
 				<button ng-click="sortBy('Nom')">Nom</button>
 				<span class="sortorder" ng-show="propertyName === 'Nom'" ng-class="{reverse: reverse}"></span>
 			</th>
 			<th>
-				<button ng-click="sortBy('Description')">Prénom</button>
+				<button ng-click="sortBy('Description')">Description</button>
 				<span class="sortorder" ng-show="propertyName === 'Description'" ng-class="{reverse: reverse}"></span>
+			</th>
+			<th>
+				<button ng-click="sortBy('Date')">Date</button>
+				<span class="sortorder" ng-show="propertyName === 'Date'" ng-class="{reverse: reverse}"></span>
 			</th>
 			<th>
 			<button ng-click="propertyName = null; reverse = false">Set to unsorted</button>
   
 			</th>
-		</tr>-->
-		<!--<tr  ng-repeat="el in listeMembres | orderBy:'Nom'" ng-if="el.Nom" class="ligne-profil"> -->
+		</tr>
 		<tr  ng-repeat="el in listetaches | orderBy:propertyName:reverse" ng-if="el.Nom" class="ligne-profil"> 
-			<td>{{el.Etat}}</td><td> <a ui-sref="taches_todo({id: el._id})" >{{el.Nom.ucfirst()}}</a></td><td><a ui-sref="taches_todo({id: el._id})" >{{el.Description.ucfirst()}}</a></td>
+			<td><input type="checkbox" ng-model="el.Etat" disabled></td><td> <a ui-sref="taches_todo({id: el._id})" >{{el.Nom.ucfirst()}}</a></td><td><a ui-sref="taches_todo({id: el._id})" >{{el.Description.ucfirst()}}</a></td>
 			<td>{{el.Date}}</td>
 						<td class="commandes"style="position: sticky; left: 50%; vertical-align: middle;">
 							<span ui-sref="taches_todo_edit({'id' : el._id})"  class="btn-commande edit"></span>
