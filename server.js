@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
    /*var myobj = { Nom: "Company Inc", Description: "Highway 37" , Date : "12/04/2057"  , Etat : true};
    var entre = new Todo(myobj);
    entre.save();*/
-   res.sendFile(path.join(__dirname + 'client/index.html'));
+   res.sendFile(path.join(__dirname + '/client/index.html'));
 
 })
 
