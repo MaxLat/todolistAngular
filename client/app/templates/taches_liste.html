@@ -5,7 +5,7 @@
 	<table  class="liste liste-container">
 		<tr>
 			<th>
-				<button ng-click="sortBy('Nom')">Statut</button>
+				<button ng-click="sortBy('Etat')">Statut</button>
 				<span class="sortorder" ng-show="propertyName === 'Etat'" ng-class="{reverse: reverse}"></span>
 			</th>
 			<th>
@@ -26,7 +26,7 @@
 			</th>
 		</tr>
 		<tr  ng-repeat="el in listetaches | orderBy:propertyName:reverse" ng-if="el.Nom" class="ligne-profil"> 
-			<td><input type="checkbox" ng-model="el.Etat" disabled></td><td> <a ui-sref="taches_todo({id: el._id})" >{{el.Nom.ucfirst()}}</a></td><td><a ui-sref="taches_todo({id: el._id})" >{{el.Description.ucfirst()}}</a></td>
+			<td><input type="checkbox" ng-model="el.Etat"  disabled></td><td> <a ui-sref="taches_todo({id: el._id})" >{{el.Nom.ucfirst()}}</a></td><td><a ui-sref="taches_todo({id: el._id})" >{{el.Description.ucfirst()}}</a></td>
 			<td>{{el.Date}}</td>
 						<td class="commandes"style="position: sticky; left: 50%; vertical-align: middle;">
 							<span ui-sref="taches_todo_edit({'id' : el._id})"  class="btn-commande edit"></span>
