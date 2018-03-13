@@ -1,0 +1,28 @@
+	<hr>
+	<h3>Liste des taches : ({{listetaches.length}})
+		<span ui-sref="membres_profil_ajouter"   class="btn-commande add">Ajouter un todo</span >
+	</h3>
+	<table  class="liste liste-container">
+		<!--<tr>
+			<th>
+				<button ng-click="sortBy('Nom')">Nom</button>
+				<span class="sortorder" ng-show="propertyName === 'Nom'" ng-class="{reverse: reverse}"></span>
+			</th>
+			<th>
+				<button ng-click="sortBy('Prenom')">Prénom</button>
+				<span class="sortorder" ng-show="propertyName === 'Prenom'" ng-class="{reverse: reverse}"></span>
+			</th>
+			<th>
+			<button ng-click="propertyName = null; reverse = false">Set to unsorted</button>
+  
+			</th>
+		</tr>-->
+		<!--<tr  ng-repeat="el in listeMembres | orderBy:'Nom'" ng-if="el.Nom" class="ligne-profil"> -->
+		<tr  ng-repeat="el in listeMembres | orderBy:propertyName:reverse" ng-if="el.Nom" class="ligne-profil"> 
+			<td> <a ui-sref="membres_profil({id: el._id})" >{{el.Nom.ucfirst()}}</td><td>{{el.Prenom.ucfirst()}}</a></td>
+						<td class="commandes"style="position: sticky; left: 50%; vertical-align: middle;">
+							<span ui-sref="membres_profil_edit({'id' : el._id})"  class="btn-commande edit"></span>
+							<span ng-click="delete(el)"   class="btn-commande delete"></span>
+						</td>
+		</tr>
+	</table>
