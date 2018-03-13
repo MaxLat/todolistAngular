@@ -1,1 +1,3 @@
 coucou
+bon on a un peu galéré au lancement...
+des difficulutés avec la prise en main de Git.

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>node angualar</title>
+
+<style>
+.liste-container{
+	max-width:50%
+}
+.commandes{
+	position: sticky;
+	left: 50%;
+	vertical-align: middle;
+	}
+	
+.btn-commande{ 
+	vertical-align: bottom; 
+	margin: 5px; 
+	cursor: pointer;
+	}
+.add{
+	content: url(assets/add.svg);
+	}
+.edit{
+	content: url(assets/pebn.svg);
+	}
+.delete{
+	content: url(assets/delete.svg);
+	}
+.ligne-profil{
+	border-bottom:1px solid grey;
+}
+.liste {
+  border-collapse: collapse;
+}
+
+.liste th {
+  border-bottom: 1px solid;
+}
+.liste td, .liste th {
+  border-left: 1px solid;
+  padding: 5px 15px;
+}
+.liste td:first-child, .liste th:first-child {
+  border-left: none;
+}
+.sortorder:after {
+  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+}
+.sortorder.reverse:after {
+  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+}
+</style>
+		<script src="/socket.io/socket.io.js"></script>
+	<!--	<script src="/assets/lib/moment/moment.js"></script>
+		<script src="/assets/lib/lodash/lodash.js"></script>
+	-->
+	<script>
+ var prefixe="taches";
+var l=[
+{name:'liste',id:'',url:"/"},
+{name:'todo',id:':id'},
+{name:'todo_ajouter',id:''},
+{name:'todo_edit',id:':id'}
+];
+
+String.prototype.ucfirst = function()
+{
+    return this.charAt(0).toUpperCase() + this.substr(1);
+}
+</script>
+
+
+			<script>
+			  var socket = io();
+			  String.prototype.ucfirst = function(){
+					return this.charAt(0).toUpperCase() + this.substr(1).toLowerCase();
+				}
+		//	  socket.on('tweet', function(msg){
+		//		console.log('message: ' + msg);
+		//		var div=document.createElement('div');
+		//		var d=(new Date(parseInt(msg[2])));
+		//		d=d.getDay()+'/'+d.getMonth()+'/'+d.getFullYear()+' à '+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds();
+		//		div.innerHTML=msg[0].name+'<br>'+d+'<br><div style="display:inline-block;"><img src="'+msg[0].profile_image_url+'">'+'</div><div style="display:inline-block;margin-left:15px;width:50%">'+msg[1]+'</div><hr>';
+		//		document.body.insertBefore(div,document.body.firstChild);
+		//	});
+			</script>
+		</head>
+<body>
+
+<div ng-app="Description">
+  
+   <a ui-sref="hello" ui-sref-active="active">Hello</a>
+   <a ui-sref="about" ui-sref-active="active">About</a>
+   <a ui-sref="membres_liste" ui-sref-active="active">listeTodo</a>
+   
+  <ui-view></ui-view>
+  
+</div>
+	<script src="/assets/lib/angular/angular.min.js"></script>
+	<script src="/assets/lib/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="/assets/lib/angular-resource/angular-resource.js"></script>
+	<script src="/app/app.js"></script>
+		<script src="/app/config/config.js"></script>
+			<script type="text/javascript" src="/app/services/membres.service.js"></script>
+
+			<script type="text/javascript" src="/app/controllers/taches_liste_Ctrl.js"></script>		
+				<script type="text/javascript" src="/app/controllers/taches_todo_Ctrl.js"></script>		
+				<script type="text/javascript" src="/app/controllers/taches_todo_ajouter_Ctrl.js"></script>		
+				<script type="text/javascript" src="/app/controllers/taches_todo_edit_Ctrl.js"></script>		
+<!---->
+
+</body>
+</html>
