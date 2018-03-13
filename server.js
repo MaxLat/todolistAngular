@@ -20,7 +20,7 @@ app.get('/', function (req, res) {
    /*var myobj = { Nom: "Company Inc", Description: "Highway 37" , Date : "12/04/2057"  , Etat : true};
    var entre = new Todo(myobj);
    entre.save();*/
-   res.sendFile(path.join(__dirname + '/index.html'));
+   res.sendFile(path.join(__dirname + 'client/index.html'));
 
 })
 
@@ -111,7 +111,7 @@ app.delete('/liste/:id', function (req, res) {
 
 app.post('/liste/', function(req, res){
 
-        var kitty = new Todo(myobj);
+        //var kitty = new Todo(myobj);
         kitty.save().then(function(req, res) {
     });
     return res.send("OK");
