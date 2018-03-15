@@ -1,1 +1,1 @@
-angular.module('moduletodo',['ui.router','ngResource']);
+angular.module('moduletodo',['ui.router','ngResource','btford.socket-io']);

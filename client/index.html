@@ -53,7 +53,6 @@
   content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
 }
 </style>
-			<script src="/app/bower_components/socket.io/test/socket.io.js"></script>
 			
 	<!--<script src="/assets/lib/moment/moment.js"></script>
 		<script src="/assets/lib/lodash/lodash.js"></script>
@@ -79,6 +78,13 @@ String.prototype.ucfirst = function()
 			//String.prototype.ucfirst = function(){
 			//	return this.charAt(0).toUpperCase() + this.substr(1).toLowerCase();
 			//}
+			
+            // Quand on reçoit un message du serveur, on l'insère dans la page
+       //    socket.on('editUser', function(data) {
+       //        //insereMessage(data.pseudo, data.message)
+		//		//document.getElementById('bip').play();
+		//		console.log('message: ' + data);
+       //    })
 		//	  socket.on('tweet', function(msg){
 		//		console.log('message: ' + msg);
 		//		var div=document.createElement('div');
@@ -101,11 +107,14 @@ String.prototype.ucfirst = function()
   
 </div>
 	<script src="/assets/lib/angular/angular.min.js"></script>
+				<script src="/assets/lib/angular-socket-io/socket.js"></script>
+
 	<script src="/assets/lib/angular-ui-router/release/angular-ui-router.js"></script>
 	<script src="/assets/lib/angular-resource/angular-resource.js"></script>
 	<script src="/app/app.js"></script>
 		<script src="/app/config/config.js"></script>
 			<script type="text/javascript" src="/app/services/taches.service.js"></script>
+			<script type="text/javascript" src="/app/services/socket-io.service.js"></script>
 
 			<script type="text/javascript" src="/app/controllers/taches_liste_Ctrl.js"></script>		
 				<script type="text/javascript" src="/app/controllers/taches_todo_Ctrl.js"></script>		

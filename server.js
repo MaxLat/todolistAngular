@@ -86,7 +86,7 @@ app.put('/liste/:id', function (req, res) {
       }
 
     }).then(function(eleve) {
-        //io.emit('editUser', { id: req.params.id, user: req.body });
+        io.emit('editUser', { id: req.params.id, user: req.body });
         res.status(200);
         res.send(req.body);
     });
