@@ -3,6 +3,14 @@ angular.module('moduletodo').controller("taches_liste_Ctrl",['$scope','$statePar
 			tachesFactory.query().$promise.then(
 					function(success){
 						$scope.listetaches = success;
+						var index=0;
+						moment.locale('fr');
+
+						$scope.listetaches.forEach(function(item){
+							$scope.listetaches[index].Date=moment(new Date(item.Date)).format('L');
+							$scope.listetaches[index].Heure=moment(new Date(item.Heure)).format('LT');
+							index++;
+						});
 					}
 					,
 					function(error){
@@ -24,6 +32,14 @@ angular.module('moduletodo').controller("taches_liste_Ctrl",['$scope','$statePar
 						tachesFactory.query().$promise.then(
 							function(success){
 								$scope.listetaches = success;
+								var index=0;
+								moment.locale('fr');
+
+								$scope.listetaches.forEach(function(item){
+									$scope.listetaches[index].Date=moment(new Date(item.Date)).format('L');
+									$scope.listetaches[index].Heure=moment(new Date(item.Heure)).format('LT');
+									index++;
+								});
 							}
 							,
 							function(error){
@@ -42,7 +58,9 @@ angular.module('moduletodo').controller("taches_liste_Ctrl",['$scope','$statePar
 				var index=0;
 				$scope.listetaches.forEach(function(item){
 					if(item._id==data.id){
-						$scope.$apply(function(){$scope.listetaches[index]=data.todo;});
+					data.todo.Date=moment(new Date(data.todo.Date)).format('L');
+					data.todo.Heure=moment(new Date(data.todo.Heure)).format('LT');
+					$scope.$apply(function(){$scope.listetaches[index]=data.todo;});
 						//alert(data);
 				}
 				index++;
@@ -51,6 +69,9 @@ angular.module('moduletodo').controller("taches_liste_Ctrl",['$scope','$statePar
 				})
           socket.on('ajoutTodo', function(data) {
 				var todo = new tachesFactory(data.success);
+					todo.Date=moment(new Date(todo.Date)).format('L');
+					todo.Heure=moment(new Date(todo.Heure)).format('LT');
+
 				$scope.$apply(function(){$scope.listetaches.push(todo);}
 				);
           })

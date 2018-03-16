@@ -1,7 +1,15 @@
 angular.module('moduletodo').controller("taches_todo_edit_Ctrl",['$scope','$stateParams','tachesFactory','$state', function($scope,$stateParams,tachesFactory,$state){
 
 
-		$scope.todo = tachesFactory.get({tskTodo : $stateParams.id}); 
+		tachesFactory.get({tskTodo : $stateParams.id}).$promise.then(
+		function(success){
+			$scope.todo = success;
+			$scope.todo.Date=new Date($scope.todo.Date);
+			$scope.todo.Heure=new Date($scope.todo.Heure);
+		},
+		function(error){
+			console.log(error);
+		}); 
 			console.log($scope.todo);
 		
 			

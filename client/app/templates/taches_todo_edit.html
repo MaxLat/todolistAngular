@@ -9,7 +9,8 @@
 		<tr><td>Do: 			</td><td>	<input type="checkbox"	ng-model="todo.Etat"	></td></tr>
 		<tr><td>Nom:			</td><td>	<input type="text"	ng-model="todo.Nom"	></td></tr>
 		<tr><td>Description:	</td><td>	<input type="text"	ng-model="todo.Description"	></td></tr>
-		<tr><td>Date:  		</td><td><input type="text" ng-model="todo.Date"></td></tr>
+		<tr><td>Date:  		</td><td><input type="date" ng-model="todo.Date"ng-value="{{todo.Date}}"></td></tr>
+		<tr><td>heure:  		</td><td><input type="time" ng-model="todo.Heure"ng-value="{{todo.Heure}}"></td></tr>
 		</table>
 	<button ng-click="todo_edit_valide(todo)">Submit</button>
 </div>

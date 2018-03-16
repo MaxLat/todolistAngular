@@ -27,7 +27,7 @@
 		</tr>
 		<tr  ng-repeat="el in listetaches | orderBy:propertyName:reverse" ng-if="el.Nom" class="ligne-profil"> 
 			<td><input type="checkbox" ng-model="el.Etat"  disabled></td><td> <a ui-sref="taches_todo({id: el._id})" >{{el.Nom.ucfirst()}}</a></td><td><a ui-sref="taches_todo({id: el._id})" >{{el.Description.ucfirst()}}</a></td>
-			<td>{{el.Date}}</td>
+			<td>{{el.Date}} {{el.Heure}}</td>
 						<td class="commandes"style="position: sticky; left: 50%; vertical-align: middle;">
 							<span ui-sref="taches_todo_edit({'id' : el._id})"  class="btn-commande edit"></span>
 							<span ng-click="delete(el)"   class="btn-commande delete"></span>

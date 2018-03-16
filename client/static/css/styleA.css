@@ -1,0 +1,46 @@
+.liste-container{
+	max-width:50%
+}
+.commandes{
+	position: sticky;
+	left: 50%;
+	vertical-align: middle;
+	}
+	
+.btn-commande{ 
+	vertical-align: bottom; 
+	margin: 5px; 
+	cursor: pointer;
+	}
+.add{
+	content: url(/assets/add.svg);
+	}
+.edit{
+	content: url(/assets/pebn.svg);
+	}
+.delete{
+	content: url(/assets/delete.svg);
+	}
+.ligne-profil{
+	border-bottom:1px solid grey;
+}
+.liste {
+  border-collapse: collapse;
+}
+
+.liste th {
+  border-bottom: 1px solid;
+}
+.liste td, .liste th {
+  border-left: 1px solid;
+  padding: 5px 15px;
+}
+.liste td:first-child, .liste th:first-child {
+  border-left: none;
+}
+.sortorder:after {
+  content: '\25b2';   // BLACK UP-POINTING TRIANGLE
+}
+.sortorder.reverse:after {
+  content: '\25bc';   // BLACK DOWN-POINTING TRIANGLE
+}

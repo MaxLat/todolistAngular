@@ -4,6 +4,7 @@ var todoSchema = mongoose.Schema({
        "Nom": String,
        "Description": String,
        "Date": String,
+       "Heure": String,
        "Etat": Boolean,
 })
 
