@@ -1,5 +1,6 @@
 angular.module('moduletodo').controller("taches_todo_edit_Ctrl",['$scope','$stateParams','tachesFactory','$state', function($scope,$stateParams,tachesFactory,$state){
 
+
 		$scope.todo = tachesFactory.get({tskTodo : $stateParams.id}); 
 			console.log($scope.todo);
 		
