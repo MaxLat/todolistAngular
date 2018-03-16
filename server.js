@@ -70,23 +70,6 @@ app.put('/liste/:id', function (req, res) {
 
 
 
-/* On supprime un utilisateur de la liste */
-//app.delete('/liste/:id', function (req, res) {
-//
-//  Todo.remove({ id: req.params.id }, function(err, todo) {
-//
-//    if(err){
-//      res.send(err);
-//	  console.log("erreur"+err);
-//    }
-//
-//  }).then(function(todo) {
-//       res.send(todo);
-//	   console.log("dele todo todo"+req.params.id);
-//       io.emit('deleteTodo', req.params.id);
-//
-//  });
-//});
 app.delete('/liste/:i', function(req, res){
 	console.log('quelqu\'un veut supprimer une entrée l\'annuaire');
 	console.log(req.params.i);
@@ -112,7 +95,6 @@ app.post('/liste/', function(req, res){
         var toDo = new Todo(req.body);
         toDo.save(function(error, success) {
 			if(error){console.log(error);}else{
-		 //io.emit('ajoutTodo', {toDo });
 		 io.emit('ajoutTodo', {success });
 		}
 	});
