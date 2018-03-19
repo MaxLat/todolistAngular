@@ -34,9 +34,12 @@
 .liste td, .liste th {
   border-left: 1px solid;
   padding: 5px 15px;
+  border-left: 1px solid grey;
+ // color:  green;
 }
 .liste td:first-child, .liste th:first-child {
   border-left: none;
+  /* border: 2px solid grey; */
 }
 .sortorder:after {
   content: '\25b2';   // BLACK UP-POINTING TRIANGLE

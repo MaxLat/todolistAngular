@@ -6,6 +6,7 @@ var todoSchema = mongoose.Schema({
        "Date": String,
        "Heure": String,
        "Etat": Boolean,
+	   "Avancement": String,
 })
 
 var Todo = mongoose.model("todo",todoSchema);
